@@ -8,7 +8,8 @@ var loop = true;
 while(loop){
   var DOB = readlineSync.question(chalk.yellow('\nEnter your date of birth in this format '+chalk.yellowBright('( DD/MM ) : ')  ));
 
-  var date = parseInt(DOB.slice(0,2));
+   if( DOB != '30/02' ){
+        var date = parseInt(DOB.slice(0,2));
   var mon = parseInt(DOB.slice(3,5));
 
   if(date <= 31 && mon <= 12){
@@ -22,9 +23,11 @@ while(loop){
             }
             i++;
           }
-
+               
+             
           if( prime == 0 ){
              console.log(chalk.green('\nCongratulations, Your birth day is a prime number'));
+             console.log(chalk.blue('share this on social media'))
           }
           else{
             console.log(chalk.red('\nSorry')+chalk.red(',Your birth day is not a prime number'));
@@ -49,6 +52,10 @@ while(loop){
          console.log(chalk.red('Invalid DOB format ! please input DOB in this format ( DD/MM/YYYY )'))
        }
     }
+    }
+   else{
+     console.log(chalk.red('Invalid date ! please input valid date'));
+   }
   }
    
    
